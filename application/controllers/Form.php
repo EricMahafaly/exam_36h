@@ -26,7 +26,6 @@ class Form extends CI_Controller {
 
     // affiche view inscription
     public function inscriptionView() {
-        echo "hello";
         $this->load->view('/formulaire/inscription');
     }
 
