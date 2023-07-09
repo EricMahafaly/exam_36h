@@ -8,31 +8,23 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/css/login.css"); ?>">
     <title>Login</title>
 </head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="col-md-12 title">
-                    Sign In
-                </div>
-                <form action="<?php echo site_url("Form/loginController"); ?>" method="post">
-                    <p>
-                        <input type="email" name="email" placeholder="email" required>
-                    </p>
-                    <p>
-                        <input type="text" name="mdp" placeholder="mots de passe" required>
-                    </p>
-                    <p>
-                        <input type="submit" class="btn" value="Valider">
-                    </p>
-                </form>
-                <div>
-                    Don't have an account?
-                    <br/>
-                    <span>SIGN UP NOW</span>
-                </div>
-            </div>
-        </div>
+<body>           
+    <h1>Sign In</h1>
+    <form action="<?php echo site_url("Form/loginController"); ?>" method="post">
+        <p>
+            <input type="email" name="email" placeholder="email" required>
+        </p>
+        <p>
+            <input type="text" name="mdp" placeholder="mots de passe" required>
+        </p>
+        <p>
+            <input type="submit" class="btn" value="Valider">
+        </p>
+    </form>
+    <div>
+        Don't have an account?
+        <br/>
+        <span><a href="<?php echo site_url("Form/inscriptionView"); ?>">SIGN UP NOW</a></span>
     </div>
 </body>
 </html>
