@@ -29,7 +29,7 @@
                 <div>
                     Don't have an account?
                     <br/>
-                    <span>SIGN UP NOW</span>
+                    <span><a href="<?php echo site_url("Form/inscriptionView"); ?>">SIGN UP NOW</a></span>
                 </div>
             </div>
         </div>
