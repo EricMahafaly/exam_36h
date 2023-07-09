@@ -26,7 +26,17 @@ class Form extends CI_Controller {
 
     // affiche view inscription
     public function inscriptionView() {
-        $this->load->view('/formulaire/inscription');
+        $this->load->model('GetDonnees');
+
+        $result = $this->GetDonnees->getUser();
+        /*
+        foreach ($result as $row) {
+            echo $colonne1 = $row->nom;
+            // Faites ce que vous voulez avec les données récupérées
+        }
+        */
+
+        $this->load->view('/formulaire/inscription', $result);
     }
 
 }
