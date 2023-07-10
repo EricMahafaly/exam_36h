@@ -14,33 +14,29 @@ class Form extends CI_Controller {
 
     // controller login
     public function loginController() {
-        $this->load->library('session');
         $mdp = $this->input->post('mdp');
-        if($mdp == 'eric') {
-            // Définir une valeur de session
-            $this->session->set_userdata('pass', $mdp);
-            
-            // Récupérer une valeur de session
-            $username = $this->session->userdata('pass');
+        $email = $this->input->post('email');
+        $result = $this->GetDonnees->getUser();
+        $check = 0;
+        foreach($result as $row) {
+            if($row->email == $email && $row->pwd == $mdp) {
+                $check += 1;
 
-            $this->load->view('/pages/accueil');
-        } else {
-            echo "echoue";
+                // Définir une valeur de session
+                $this->session->set_userdata('email', $row->email);
+
+                $this->load->view('/pages/accueil');
+            }
+        }
+
+        if($check == 0) {
+            redirect('/Form/loginView');
         }
     }
 
     // affiche view inscription
     public function inscriptionView() {
-
-        $result = $this->GetDonnees->getUser();
-        /*
-        foreach ($result as $row) {
-            echo $colonne1 = $row->nom;
-            // Faites ce que vous voulez avec les données récupérées
-        }
-        */
-
-        $this->load->view('/formulaire/inscription', $result);
+        $this->load->view('/formulaire/inscription');
     }
 
     // inscription
