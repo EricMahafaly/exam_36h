@@ -11,7 +11,11 @@ class Form extends CI_Controller {
     }
     // affiche view Login
     public function loginView() {
-        $this->load->view('/formulaire/login');
+        if(isset($_SESSION['id'])) {
+            $this->load->view('/pages/accueil');
+        } else {
+            $this->load->view('/formulaire/login');
+        }
     }
 
     // controller login
