@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="<?php echo site_url("/Accueil/ajoutArgent") ?>" method="post">
         <label for="code">Entrer un code</label>
         <input type="number" name="code">
         <input type="submit" value="Entrer">
