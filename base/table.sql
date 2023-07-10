@@ -23,7 +23,8 @@ CREATE TABLE morphologie(
 CREATE TABLE code(
     id SERIAL PRIMARY KEY ,
     code VARCHAR(20) ,
-    tarif DOUBLE PRECISION 
+    tarif DOUBLE PRECISION ,
+    utilisable BOOLEAN
 );
 
 CREATE TABLE user_code(
