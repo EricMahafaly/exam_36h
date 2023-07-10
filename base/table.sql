@@ -8,22 +8,23 @@ CREATE TABLE users (
     email VARCHAR(255),
     pwd VARCHAR(255),
     date_naissance DATE,
+    genre INTEGER,
+    taille DOUBLE PRECISION,
+    poids DOUBLE PRECISION,
     est_admin INTEGER
 );
 
-CREATE TABLE morphologie(
-    id SERIAL PRIMARY KEY ,
-    genre INTEGER ,
-    taille DOUBLE PRECISION ,
-    poids DOUBLE PRECISION ,
-    user_id INTEGER REFERENCES users
+CREATE TABLE argent (
+    id_user INTEGER,
+    montant DOUBLE PRECISION,
+    FOREIGN KEY (id_user) REFERENCES users(id_user)
 );
 
 CREATE TABLE code(
     id SERIAL PRIMARY KEY ,
     code VARCHAR(20) ,
     tarif DOUBLE PRECISION ,
-    utilisable BOOLEAN
+    utilisable INTEGER
 );
 
 CREATE TABLE user_code(
@@ -72,8 +73,8 @@ CREATE TABLE perdre_poids(
     sport_id INTEGER REFERENCES sport ,
     nutrition_id INTEGER REFERENCES nutrition 
 );
+
 CREATE TABLE IMC(
     id SERIAL PRIMARY KEY,
     resultat DOUBLE PRECISION
-
 );

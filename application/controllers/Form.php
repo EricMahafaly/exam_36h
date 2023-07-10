@@ -60,6 +60,7 @@ class Form extends CI_Controller {
         $tab_info = array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'pwd' => $pwd, 'date_naissance' => $date_naissance);
         
         $this->InsertDonnees->inscription($tab_info);
+        $this->InsertDonnees->ajoutUserArgent();
 
         redirect('/Form/loginView');
     }
@@ -79,6 +80,6 @@ class Form extends CI_Controller {
         $tab_morpho = array('genre' => $genre, 'taille' => $taille, 'poids' => $poids);
         
         
-        $this->InsertDonnees->insertMorpho($tab_morpho, $this->session->userdata('id_user'));
+        $this->InsertDonnees->insertMorpho($tab_morpho, $_SESSION['id']);
     }
 }
