@@ -21,15 +21,14 @@ class Accueil extends CI_Controller {
     public function ajoutArgent() {
         $numCode = $this->input->post('code');
         $code = $this->GetDonnees->getCode($numCode);
-
+        $tarif = 0;
         foreach($code as $row) {
-            
+            $tarif = $row->tarif;
         }
 
         // ajout argent user
-        $this->InsertDonnees->ajoutArgentUser($code->tarif, $_SESSION['id']);
+        $this->InsertDonnees->ajoutArgentUser($tarif, $_SESSION['id']);
 
-        echo (float) $code->tarif;
-        //redirect('/Form/loginView');
+        redirect('/Form/loginView');
     }
 }

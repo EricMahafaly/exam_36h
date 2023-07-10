@@ -31,8 +31,6 @@ class Form extends CI_Controller {
                 // Définir une valeur de session
                 $_SESSION['id'] = $row->id_user;
 
-                echo $_SESSION['id'];
-
             }
         }
         
