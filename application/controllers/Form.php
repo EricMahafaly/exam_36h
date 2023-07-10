@@ -50,6 +50,8 @@ class Form extends CI_Controller {
         $tab_info = array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'pwd' => $pwd, 'date_naissance' => $date_naissance);
         
         $this->InsertDonnees->inscription($tab_info);
+
+        redirect('/Form/loginView');
     }
 
 }
