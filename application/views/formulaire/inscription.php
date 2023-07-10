@@ -24,6 +24,18 @@
             <input type="date" name="date_naissance" placeholder="Date de naissance" required>
         </p>
         <p>
+            <select name="genre">
+                <option value="1">Male</option>
+                <option value="0">Femelle</option>
+            </select>
+        </p>
+        <p>
+            <input type="number" name="taille" step="0.01" placeholder="Taille">
+        </p>
+        <p>
+            <input type="number" name="poids" step="0.01" placeholder="Poids">
+        </p>
+        <p>
             <input type="submit" value="Valider">
         </p>
     </form>

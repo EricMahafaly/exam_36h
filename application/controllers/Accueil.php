@@ -18,10 +18,18 @@ class Accueil extends CI_Controller {
     }
 
     // ajout argent
-    public function ajoutArgent($numCode) {
+    public function ajoutArgent() {
+        $numCode = $this->input->post('code');
         $code = $this->GetDonnees->getCode($numCode);
 
+        foreach($code as $row) {
+            
+        }
+
         // ajout argent user
-        
+        $this->InsertDonnees->ajoutArgentUser($code->tarif, $_SESSION['id']);
+
+        echo (float) $code->tarif;
+        //redirect('/Form/loginView');
     }
 }

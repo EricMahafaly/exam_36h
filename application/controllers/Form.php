@@ -56,30 +56,15 @@ class Form extends CI_Controller {
         $email = $this->input->post('email');
         $pwd = $this->input->post('pwd');
         $date_naissance = $this->input->post('date_naissance');
+        $genre = $this->input->post('genre');
+        $taille = $this->input->post('taille');
+        $poids = $this->input->post('poids');
 
-        $tab_info = array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'pwd' => $pwd, 'date_naissance' => $date_naissance);
+        $tab_info = array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'pwd' => $pwd, 'date_naissance' => $date_naissance, 'genre' => $genre, 'taille' => $taille, 'poids' => $poids);
         
         $this->InsertDonnees->inscription($tab_info);
         $this->InsertDonnees->ajoutUserArgent();
 
         redirect('/Form/loginView');
-    }
-
-    // morphologie view
-    public function morphologieView() {
-        echo $this->session->userdata('id_user'); 
-        $this->load->view('/formulaire/morphologie');
-    }
-
-    // morphologie controller
-    public function insertMorphologie() {
-        $genre = $this->input->post('genre');
-        $taille = $this->input->post('taille');
-        $poids = $this->input->post('poids');
-
-        $tab_morpho = array('genre' => $genre, 'taille' => $taille, 'poids' => $poids);
-        
-        
-        $this->InsertDonnees->insertMorpho($tab_morpho, $_SESSION['id']);
     }
 }

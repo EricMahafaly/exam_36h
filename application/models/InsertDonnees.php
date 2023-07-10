@@ -9,8 +9,8 @@ class InsertDonnees extends CI_Model {
 
     // insert user
     public function inscription($tab_info) {
-        $sql = "INSERT INTO users VALUES (DEFAULT, '%s', '%s', '%s', '%s', '%s', 0)";
-        $query = sprintf($sql, $tab_info['nom'], $tab_info['prenom'], $tab_info['email'], $tab_info['pwd'], $tab_info['date_naissance']);
+        $sql = "INSERT INTO users VALUES (DEFAULT, '%s', '%s', '%s', '%s', '%s', %d, %d, %d, 0)";
+        $query = sprintf($sql, $tab_info['nom'], $tab_info['prenom'], $tab_info['email'], $tab_info['pwd'], $tab_info['date_naissance'], $tab_info['genre'], $tab_info['taille'], $tab_info['poids']);
         
         $this->db->query($query);
     }

@@ -15,7 +15,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE argent (
-    id_user INTEGER,
+    id_user SERIAL,
     montant DOUBLE PRECISION,
     FOREIGN KEY (id_user) REFERENCES users(id_user)
 );
