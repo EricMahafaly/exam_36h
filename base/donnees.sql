@@ -1,3 +1,62 @@
+-----USERS
 INSERT INTO users VALUES 
     (DEFAULT, 'MAHAFALY', 'Eric', 'Eric@gmail.com', 'eriv', '2010-11-29', 1)
+;
+INSERT INTO users VALUES 
+    (DEFAULT, 'ANDRIANARIVELO', 'Nasandratra', 'naasandvelo@gmail.com', 'naas', '2002-12-25', 1)
+;
+INSERT INTO users VALUES 
+    (DEFAULT, 'ANDRIANIRINA ANAKA', 'Miary Ambninina', 'Ambinina@gmail.com', 'moota', '2012-03-19', 1)
+;
+INSERT INTO users VALUES 
+    (DEFAULT, 'RAKOTO', 'John', 'John@gmail.com', 'John', '2000-10-01', 0)
+;
+INSERT INTO users VALUES 
+    (DEFAULT, 'ANDRIANIRINA', 'Iriantsoa Fifaliana', 'Fifa@gmail.com', 'stephannot', '2005-07-09', 0)
+;
+-----CODES
+INSERT INTO code VALUES 
+    (DEFAULT,10,10000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,12,12000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,14,14000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,15,15000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,18,18000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,20,20000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,24,24000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,25,25000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,28,28000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,30,30000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,32,32000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,35,35000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,38,38000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,40,40000)
+;
+INSERT INTO code VALUES 
+    (DEFAULT,45,45000)
 ;

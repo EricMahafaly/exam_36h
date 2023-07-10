@@ -71,3 +71,8 @@ CREATE TABLE perdre_poids(
     sport_id INTEGER REFERENCES sport ,
     nutrition_id INTEGER REFERENCES nutrition 
 );
+CREATE TABLE IMC(
+    id SERIAL PRIMARY KEY,
+    resultat DOUBLE PRECISION
+
+);
