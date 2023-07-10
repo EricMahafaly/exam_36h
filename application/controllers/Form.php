@@ -2,6 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Form extends CI_Controller {
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('GetDonnees');
+        $this->load->model('InsertDonnees');
+    }
     // affiche view Login
     public function loginView() {
         $this->load->view('/formulaire/login');
@@ -26,7 +31,6 @@ class Form extends CI_Controller {
 
     // affiche view inscription
     public function inscriptionView() {
-        $this->load->model('GetDonnees');
 
         $result = $this->GetDonnees->getUser();
         /*
@@ -37,6 +41,19 @@ class Form extends CI_Controller {
         */
 
         $this->load->view('/formulaire/inscription', $result);
+    }
+
+    // inscription
+    public function inscriptionController() {
+        $nom = $this->input->post('nom');
+        $prenom = $this->input->post('prenom');
+        $email = $this->input->post('email');
+        $pwd = $this->input->post('pwd');
+        $date_naissance = $this->input->post('date_naissance');
+
+        $tab_info = array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'pwd' => $pwd, 'date_naissance' => $date_naissance);
+        
+        $this->InsertDonnees->inscription($tab_info);
     }
 
 }

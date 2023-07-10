@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Inscription</h1>
-    <form action="" method="post">
+    <form action="<?php echo site_url("Form/inscriptionController"); ?>" method="post">
         <p>
             <input type="text" name="nom" placeholder="Nom" required>
         </p>
@@ -27,5 +27,6 @@
             <input type="submit" value="Valider">
         </p>
     </form>
+    
 </body>
 </html>
