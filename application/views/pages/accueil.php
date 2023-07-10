@@ -11,5 +11,11 @@
     <p>
         <a href="<?php echo site_url("Form/morphologieView"); ?>"><button>Ajouter morphologie</button></a>
     </p>
+    <p>
+        <a href="<?php echo site_url(""); ?>"><button>Choisir un objectif</button></a>
+    </p>
+    <p>
+        <a href="<?php echo site_url(""); ?>"><button>Ajouter de l'argent</button></a>
+    </p>
 </body>
 </html>

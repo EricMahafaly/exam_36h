@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Form extends CI_Controller {
     public function __construct() {
         parent::__construct();
-
+        
         $this->load->model('GetDonnees');
         $this->load->model('InsertDonnees');
 
@@ -25,16 +25,18 @@ class Form extends CI_Controller {
                 $check += 1;
 
                 // Définir une valeur de session
-                $this->session->set_userdata('id_user', $row->id_user);
+                $_SESSION['id'] = $row->id_user;
 
-                echo $this->session->userdata('id_user'); 
+                echo $_SESSION['id'];
 
-                $this->load->view('/pages/accueil');
             }
         }
-
+        
         if($check == 0) {
             redirect('/Form/loginView');
+        } else {
+
+            $this->load->view('/pages/accueil');
         }
     }
 
