@@ -16,13 +16,14 @@ CREATE TABLE morphologie(
     genre INTEGER ,
     taille DOUBLE PRECISION ,
     poids DOUBLE PRECISION ,
-    user_id INTEGER REFERENCES users 
+    user_id INTEGER REFERENCES users
 );
 
 CREATE TABLE code(
     id SERIAL PRIMARY KEY ,
     code VARCHAR(20) ,
-    tarif DOUBLE PRECISION 
+    tarif DOUBLE PRECISION ,
+    utilisable BOOLEAN
 );
 
 CREATE TABLE user_code(
@@ -50,8 +51,8 @@ CREATE TABLE gagner_poids(
     id SERIAL PRIMARY KEY ,
     couple INTEGER ,
     eau_par_jour DOUBLE PRECISION ,
-    age_min INTEGER ,
-    age_max INTEGER ,
+    poids_min INTEGER ,
+    poids_max INTEGER ,
     genre INTEGER ,
     duree_sport DOUBLE PRECISION ,
     poids_nutrition DOUBLE PRECISION ,
@@ -63,8 +64,8 @@ CREATE TABLE perdre_poids(
     id SERIAL PRIMARY KEY ,
     couple INTEGER ,
     eau_par_jour DOUBLE PRECISION ,
-    age_min INTEGER ,
-    age_max INTEGER ,
+    poids_min INTEGER ,
+    poids_max INTEGER ,
     genre INTEGER ,
     duree_sport DOUBLE PRECISION ,
     poids_nutrition DOUBLE PRECISION ,
