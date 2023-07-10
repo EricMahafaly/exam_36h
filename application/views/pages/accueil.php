@@ -1,6 +1,3 @@
-<?php 
-    echo $_SESSION['email'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,5 +8,8 @@
 </head>
 <body>
     Welcome
+    <p>
+        <a href="<?php echo site_url("Form/morphologieView"); ?>"><button>Ajouter morphologie</button></a>
+    </p>
 </body>
 </html>

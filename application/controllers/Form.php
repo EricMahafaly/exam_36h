@@ -4,8 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Form extends CI_Controller {
     public function __construct() {
         parent::__construct();
+
         $this->load->model('GetDonnees');
         $this->load->model('InsertDonnees');
+
     }
     // affiche view Login
     public function loginView() {
@@ -23,7 +25,9 @@ class Form extends CI_Controller {
                 $check += 1;
 
                 // Définir une valeur de session
-                $this->session->set_userdata('email', $row->email);
+                $this->session->set_userdata('id_user', $row->id_user);
+
+                echo $this->session->userdata('id_user'); 
 
                 $this->load->view('/pages/accueil');
             }
@@ -54,4 +58,21 @@ class Form extends CI_Controller {
         redirect('/Form/loginView');
     }
 
+    // morphologie view
+    public function morphologieView() {
+        echo $this->session->userdata('id_user'); 
+        $this->load->view('/formulaire/morphologie');
+    }
+
+    // morphologie controller
+    public function insertMorphologie() {
+        $genre = $this->input->post('genre');
+        $taille = $this->input->post('taille');
+        $poids = $this->input->post('poids');
+
+        $tab_morpho = array('genre' => $genre, 'taille' => $taille, 'poids' => $poids);
+        
+        
+        $this->InsertDonnees->insertMorpho($tab_morpho, $this->session->userdata('id_user'));
+    }
 }
