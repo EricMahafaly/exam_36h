@@ -16,8 +16,7 @@ CREATE TABLE morphologie(
     genre INTEGER ,
     taille DOUBLE PRECISION ,
     poids DOUBLE PRECISION ,
-    user_id INTEGER,
-    FOREIGN KEY (user_id) REFERENCES users(id_user)
+    user_id INTEGER REFERENCES users
 );
 
 CREATE TABLE code(
