@@ -1,5 +1,5 @@
 <?php 
-    echo $_SESSION['pass'];
+    echo $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
