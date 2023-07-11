@@ -52,7 +52,7 @@
 			<!-- Navigation Menu -->
 		    <div class="nav-menu">
 				<ul class="nav uppercase">
-					<li><a href="#home" class="scroll">Home</a></li>       
+					<li><a href="<?php echo site_url("Form/loginView"); ?>" class="scroll">Home</a></li>       
 					<li><a href="#profil" class="scroll">Profil</a></li>     
 					<li><a href="#about" class="scroll">About us</a></li>
 					<li><a href="#goal" class="scroll">Goal</a></li>

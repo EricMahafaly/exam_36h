@@ -42,6 +42,7 @@ class Accueil extends CI_Controller {
         $poids = $this->input->post('poids');
 
         if($poids < 0) {
+            $poids *= -1;
             $regime = $this->GetDonnees->getRegime($poids);
         } else {
             $regime = $this->GetDonnees->getRegimeGainsPoids($poids);
