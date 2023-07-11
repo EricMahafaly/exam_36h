@@ -33,8 +33,11 @@ class GetDonnees extends CI_Model {
 
     // argent code
     public function getCode($numCode) {
-        $sql = "SELECT * FROM code WHERE code = '%s'";
+        $sql = "SELECT * FROM code WHERE code = '%s' AND utilisable = 1";
+        $sql2 = "UPDATE code SET utilisable = 0 WHERE code = '%s'";
         $query = $this->db->query(sprintf($sql, $numCode));
+
+        $this->db->query(sprintf($sql2, $numCode));
 
         return $query->result();
     }
@@ -59,6 +62,14 @@ class GetDonnees extends CI_Model {
     public function getAllRegime() {
         $sql = "SELECT * FROM v_regime_perdre";
         $query = $this->db->query($sql);
+
+        return $query->result();
+    }
+
+    // get argent
+    public function getArgentById($id_user) {
+        $sql = "SELECT * FROM argent WHERE id_user = %d";
+        $query = $this->db->query(sprintf($sql, $id_user));
 
         return $query->result();
     }
