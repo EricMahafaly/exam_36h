@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
+    <title>Inscription etape 2</title>
     <!--Favicon -->
 	<link rel="icon" type="image/png" href="<?php echo base_url('assets/images/favicon.jpg'); ?>" />
 		
@@ -45,25 +45,14 @@
             	<h4 class="header light gray3 fancy"><span class="colored">Sign </span>Up</h4>
                 <p class="h-desc white">Enter here your information </p>
 				<!-- Form -->
-                <form action="<?php echo site_url("Form/inscriptionControllerOne"); ?>" method="post">
+                <form action="<?php echo site_url("Form/inscriptionControllerTwo"); ?>" method="post">
 					<!-- Left Inputs -->
 					<div class="col-xs-6 animated" data-animation="fadeInLeft" data-animation-delay="300">
                         
-                        <!-- Nom -->
-						<input type="text" name="nom" id="mail" required="required" class="form" placeholder="Your First Name" />
-                        <!-- Prenom -->
-						<input type="text" name="prenom" id="mail" required="required" class="form" placeholder="Your Second Name" />
-						<!-- Email -->
-						<input type="email" name="email" id="mail" required="required" class="form" placeholder="Your Email" />
-						<!-- Password -->
-						<input type="password" name="mdp" id="subject" required="required" class="form" placeholder="Your Password" />
-                        <!--Date de naissance-->
-						<input type="date" name="date_naissance" id="subject" required="required" class="form" placeholder="Date of birth" />
-                        
-                        <select name="genre" class="form">
-                            <option value="1">MAN</option>
-                            <option value="0">WOMAN</option>
-                        </select>
+						<!-- taille -->
+						<input type="number" step="0.01" name="taille" id="subject" required="required" class="form" placeholder="Taille" />
+                        <!-- Poids -->
+						<input type="number" step="0.01" name="poids" id="subject" required="required" class="form" placeholder="Poids" />
                         <div class="sign-up">
                             <span><b>Have an account?</b><a href="<?php echo site_url("Form/loginView"); ?>">Sign-In</a></span>
                         </div>
@@ -71,7 +60,7 @@
 					<!-- Bottom Submit -->
 					<div class="relative fullwidth col-xs-12">
 						<!-- Send Button -->
-						<button type="submit" id="submit" name="submit" class="form-btn semibold">Next</button> 
+						<button type="submit" id="submit" name="submit" class="form-btn semibold">Sign-Up</button> 
 					</div><!-- End Bottom Submit -->
 					<!-- Clear -->
 					<div class="clear"></div>

@@ -177,10 +177,13 @@
 						<img width="150px" height="150px" src="<?php echo base_url('assets/users/user.jpg'); ?>"></img>
 					</div>
 					<div id="inf" class="col-md-7">
-						<?php foreach($info as $row) { ?>
-							<h2><?php echo $row->prenom . " " . $row->nom; ?></h2>
-							<h4><?php echo $row->email; ?></h4>
-							<h5><?php echo $row->date_naissance; ?></h5>
+						<?php foreach($argent as $row2) { ?>
+							<?php foreach($info as $row) { ?>
+								<h2><?php echo $row->prenom . " " . $row->nom; ?></h2>
+								<h4><?php echo $row->email; ?></h4>
+								<h5><?php echo $row->date_naissance; ?></h5>
+								<h6>Compte : <b><?php echo $row2->montant; ?>  Ar</b></h4>
+							<?php } ?>
 						<?php } ?>
 					</div>
 				</div>
