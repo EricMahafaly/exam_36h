@@ -42,7 +42,6 @@ CREATE TABLE sport(
 CREATE TABLE aliments (
     id_aliments SERIAL PRIMARY KEY ,
     nom VARCHAR(50) ,
-    categorie VARCHAR(50),
     objectif VARCHAR(50) 
 );
 

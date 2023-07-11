@@ -17,5 +17,8 @@
     <p>
         <a href="<?php echo site_url("Accueil/ajouterArgentView"); ?>"><button>Ajouter de l'argent</button></a>
     </p>
+    <p>
+        <a href="<?php echo site_url("Accueil/deconnexion"); ?>"><button>Deconnexion</button></a>
+    </p>
 </body>
 </html>

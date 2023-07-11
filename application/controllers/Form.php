@@ -11,10 +11,12 @@ class Form extends CI_Controller {
     }
     // affiche view Login
     public function loginView() {
-        if(isset($_SESSION['id'])) {
+        if(isset($_SESSION['id']) && !isset($_SESSION['admin'])) {
             $this->load->view('/pages/accueil');
-        } else {
-            $this->load->view('/formulaire/login');
+        } else if(isset($_SESSION['id']) && isset($_SESSION['admin'])) {
+            $this->load->view('pages_back/accueil_admin');
+        } else if(!isset($_SESSION['id']) && !isset($_SESSION['admin'])) {
+            $this->load->view('formulaire/login');
         }
     }
 
@@ -30,6 +32,11 @@ class Form extends CI_Controller {
 
                 // Définir une valeur de session
                 $_SESSION['id'] = $row->id_user;
+
+                if($row->est_admin == 1) {
+                    $_SESSION['adimin'] = 1;
+                    $this->load->view('pages_back/accueil_admin');
+                }
 
             }
         }

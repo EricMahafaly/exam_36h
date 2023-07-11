@@ -46,4 +46,12 @@ class GetDonnees extends CI_Model {
 
         return $query->result();
     }
+
+    // get all regime
+    public function getAllRegime() {
+        $sql = "SELECT * FROM v_regime_perdre";
+        $query = $this->db->query($sql);
+
+        return $query->result();
+    }
 } 
