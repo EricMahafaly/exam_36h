@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="<?php echo site_url("Accueil/perdrePoids"); ?>" method="post">
+    <form action="<?php echo site_url("Accueil/gainsPoids"); ?>" method="post">
         <input type="number" name="poids">
         <input type="submit" value="OK">
     </form>

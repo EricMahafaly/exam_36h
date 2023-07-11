@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <a href=""><button>Perdre du poids</button></a>
+    <a href="<?php echo site_url("Accueil/perdrePoidsView"); ?>"><button>Perdre du poids</button></a>
     <br/>
-    <a href=""><button>Gains de poids</button></a>
+    <a href="<?php echo site_url("Accueil/gainsPoidsView"); ?>"><button>Gains de poids</button></a>
 </body>
 </html>

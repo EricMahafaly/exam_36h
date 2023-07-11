@@ -41,6 +41,29 @@ class Accueil extends CI_Controller {
     public function perdrePoids() {
         $poidsPerdre = $this->input->post('poids');
 
-        
+        $regime = $this->GetDonnees->getRegime($poidsPerdre);
+
+        $this->load->view('pages/regime', array('regime' => $regime));
     }
+
+    // view perder
+    public function perdrePoidsView() {
+        $this->load->view('pages/perdre');
+    }
+
+    // view gagner
+    public function gainsPoidsView() {
+        $this->load->view('pages/gains');
+    }
+
+    // gagner du poids
+    public function gainsPoids() {
+        $poidsGains = $this->input->post('poids');
+
+        $regime = $this->GetDonnees->getRegimeGainsPoids($poidsGains);
+
+        $this->load->view('pages/regime', array('regime' => $regime));
+    }
+
+
 }

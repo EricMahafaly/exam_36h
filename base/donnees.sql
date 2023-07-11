@@ -66,7 +66,7 @@ INSERT INTO aliments VALUES
     (DEFAULT, 'Poulet', 'gains'),
     (DEFAULT, 'Viande', 'gains'),
     (DEFAULT, 'Oeufs', 'gains'),
-    (DEFAULT, 'Poulet', 'gains')
+    (DEFAULT, 'Poisson', 'gains')
 ;
 
 -- sport --
@@ -83,4 +83,11 @@ INSERT INTO regime_perdre VALUES
     (DEFAULT, 6, 10, 2, 2, 4),
     (DEFAULT, 11, 15, 3, 3, 4),
     (DEFAULT, 16, 20, 5, 4, 6)
+;
+
+INSERT INTO regime_gains VALUES
+    (DEFAULT, 1, 5, 9, 2, 5),
+    (DEFAULT, 6, 10, 10, 5, 4),
+    (DEFAULT, 11, 15, 11, 3, 7),
+    (DEFAULT, 16, 20, 12, 4, 6)
 ;
