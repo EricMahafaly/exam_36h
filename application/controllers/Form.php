@@ -4,12 +4,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Form extends CI_Controller {
     public function __construct() {
         parent::__construct();
+        
         $this->load->model('GetDonnees');
         $this->load->model('InsertDonnees');
+
     }
     // affiche view Login
     public function loginView() {
-        $this->load->view('/formulaire/login');
+        if(isset($_SESSION['id'])) {
+            $this->load->view('/pages/accueil');
+        } else {
+            $this->load->view('/formulaire/login');
+        }
     }
 
     // controller login
@@ -23,14 +29,16 @@ class Form extends CI_Controller {
                 $check += 1;
 
                 // Définir une valeur de session
-                $this->session->set_userdata('email', $row->email);
+                $_SESSION['id'] = $row->id_user;
 
-                $this->load->view('/pages/accueil');
             }
         }
-
+        
         if($check == 0) {
             redirect('/Form/loginView');
+        } else {
+
+            $this->load->view('/pages/accueil');
         }
     }
 
@@ -46,10 +54,15 @@ class Form extends CI_Controller {
         $email = $this->input->post('email');
         $pwd = $this->input->post('pwd');
         $date_naissance = $this->input->post('date_naissance');
+        $genre = $this->input->post('genre');
+        $taille = $this->input->post('taille');
+        $poids = $this->input->post('poids');
 
-        $tab_info = array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'pwd' => $pwd, 'date_naissance' => $date_naissance);
+        $tab_info = array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'pwd' => $pwd, 'date_naissance' => $date_naissance, 'genre' => $genre, 'taille' => $taille, 'poids' => $poids);
         
         $this->InsertDonnees->inscription($tab_info);
-    }
+        $this->InsertDonnees->ajoutUserArgent();
 
+        redirect('/Form/loginView');
+    }
 }

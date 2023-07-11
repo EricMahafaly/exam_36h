@@ -1,3 +1,7 @@
+
+<?php
+    echo $_SESSION['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -349,20 +353,6 @@
  	$(this).children("i").removeClass("fa-spin");
  });
 
-
-
-=======
-    Welcome
-    <p>
-        <a href="<?php echo site_url("Form/morphologieView"); ?>"><button>Ajouter morphologie</button></a>
-    </p>
-    <p>
-        <a href="<?php echo site_url(""); ?>"><button>Choisir un objectif</button></a>
-    </p>
-    <p>
-        <a href="<?php echo site_url("Accueil/ajouterArgentView"); ?>"><button>Ajouter de l'argent</button></a>
-    </p>
->>>>>>> f8c75ec70c0af42490887f5eb6b3c0d933890c9c
 </body>
 
 </html>
