@@ -15,6 +15,14 @@ class GetDonnees extends CI_Model {
         return $query->result();
     }
 
+    // get user by id
+    public function getUserById($id) {
+        $sql = "SELECT * FROM users WHERE id_user = %d";
+        $query = $this->db->query(sprintf($sql, $id));
+
+        return $query->result();
+    }
+
     // get all code
     public function getAllCode() {
         $sql = "SELECT * FROM code";
