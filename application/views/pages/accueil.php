@@ -74,8 +74,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-
 	<!-- Navigation -->
 	<section id="navigation" class="dark-nav">
 		<!-- Navigation Inner -->

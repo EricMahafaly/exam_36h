@@ -65,5 +65,11 @@ class Accueil extends CI_Controller {
         $this->load->view('pages/regime', array('regime' => $regime));
     }
 
+    public function deconnexion() {
+        $this->session->sess_destroy();
+
+        redirect('/Form/loginView');
+    }
+
 
 }
