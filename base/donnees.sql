@@ -1,6 +1,6 @@
 -----USERS
 INSERT INTO users VALUES 
-    (DEFAULT, 'MAHAFALY', 'Eric', 'Eric@gmail.com', 'eriv', '2010-11-29', 1, 1.75, 70, 1)
+    (0, 'MAHAFALY', 'Eric', 'Eric@gmail.com', 'eriv', '2010-11-29', 1, 1.75, 70, 1)
 ;
 
 -----CODES

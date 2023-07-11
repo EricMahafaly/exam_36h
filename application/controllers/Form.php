@@ -30,21 +30,20 @@ class Form extends CI_Controller {
             if($row->email == $email && $row->pwd == $mdp) {
                 $check += 1;
 
-                // Définir une valeur de session
-                $_SESSION['id'] = $row->id_user;
-
                 if($row->est_admin == 1) {
                     $_SESSION['adimin'] = 1;
                     $this->load->view('pages_back/accueil_admin');
+
+                } else {
+                    $_SESSION['id'] = $row->id_user;
                 }
 
             }
         }
-        
+
         if($check == 0) {
             redirect('/Form/loginView');
-        } else {
-
+        } else if(isset($_SESSION['id'])) {
             $this->load->view('/pages/accueil');
         }
     }
