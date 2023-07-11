@@ -1,3 +1,4 @@
+DROP DATABASE projet_48h;
 CREATE DATABASE projet_48h;
 \c projet_48h;
 
