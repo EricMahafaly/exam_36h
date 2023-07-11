@@ -44,7 +44,9 @@ class Form extends CI_Controller {
         if($check == 0) {
             redirect('/Form/loginView');
         } else if(isset($_SESSION['id'])) {
-            $this->load->view('/pages/accueil');
+            $allCode = $this->GetDonnees->getAllCode();
+            $information = $this->GetDonnees->getUserById($_SESSION['id']);
+            $this->load->view('/pages/accueil', array('allCode' => $allCode, 'info' => $information));
         }
     }
 

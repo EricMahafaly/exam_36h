@@ -93,7 +93,7 @@
 					<li><a href="#goal" class="scroll">Goal</a></li>
 					<li><a href="#suggestions" class="scroll">Show Suggestions</a></li>
 					<li><a href="#code" class="scroll">Argents</a></li>
-					<li><a href="#clients" class="scroll">Log-Out</a></li>
+					<li><a href="<?php echo site_url("Accueil/deconnexion"); ?>" class="scroll">Log-Out</a></li>
 				</ul>
 		  </div><!-- End Navigation Menu -->
 		</div><!-- End Navigation Inner -->
@@ -177,9 +177,11 @@
 						<img width="150px" height="150px" src="<?php echo base_url('assets/users/user.jpg'); ?>"></img>
 					</div>
 					<div id="inf" class="col-md-7">
-						<h2>Eric Mahafaly</h2>
-						<h4>EricMahafaly7@gmail.com</h4>
-						<h5>2022-02-11</h5>
+						<?php foreach($info as $row) { ?>
+							<h2><?php echo $row->prenom . " " . $row->nom; ?></h2>
+							<h4><?php echo $row->email; ?></h4>
+							<h5><?php echo $row->date_naissance; ?></h5>
+						<?php } ?>
 					</div>
 				</div>
 			</div><!-- End Boxes -->
@@ -222,20 +224,15 @@
                 <p class="h-desc white">Enter here your Goals <br />
                 Email us or give us a call at <span class="bold colored">+1 (800) 245-1234.</span></p>
 				<!-- Form -->
-				<form id="contact-us" method="post" action="#">
+				<form id="" method="post" action="<?php echo site_url("Accueil/perdrePoidsGains"); ?>">
 					<!-- Left Inputs -->
-					<div class="col-xs-6 animated" data-animation="fadeInLeft" data-animation-delay="300">
+					<div class="col-xs-12 animated" data-animation="fadeInLeft" data-animation-delay="300">
 					
 						<!-- Email -->
-						<input type="number" name="taille" id="mail" required="required" class="form" placeholder="Your taille" />
 						<!-- Subject -->
 						<input type="number" name="poids" id="subject" required="required" class="form" placeholder="Your Weight" />
 					</div><!-- End Left Inputs -->
 					<!-- Right Inputs -->
-					<div class="col-xs-6 animated" data-animation="fadeInRight" data-animation-delay="400">
-						<!-- Message -->
-						<textarea name="objectifs" id="message" class="form textarea"  placeholder="Objectifs"></textarea>
-					</div><!-- End Right Inputs -->
 					<!-- Bottom Submit -->
 					<div class="relative fullwidth col-xs-12">
 						<!-- Send Button -->
@@ -249,7 +246,6 @@
 				<div class="mail-message-area">
 					<!-- Message -->
 					<div class="alert gray-bg mail-message not-visible-message">
-						<strong>Thank You !</strong> Your email has been delivered.
 					</div>
 				</div>
 
@@ -270,7 +266,7 @@
             	<h4 class="header light gray3 fancy"><span class="colored">Your </span>Code</h4>
                 <p class="h-desc white">Enter here your Goals </p>
 				<!-- Form -->
-				<form id="contact-us" method="post" action="#">
+				<form id="" method="post" action="<?php echo site_url("Accueil/ajoutArgent"); ?>">
 					<!-- Left Inputs -->
 					<div class="col-xs-6 animated" data-animation="fadeInLeft" data-animation-delay="300">
 						<!-- Email -->
@@ -291,7 +287,6 @@
 				<div class="mail-message-area">
 					<!-- Message -->
 					<div class="alert gray-bg mail-message not-visible-message">
-						<strong>Thank You !</strong> Your email has been delivered.
 					</div>
 				</div>
 
@@ -304,10 +299,10 @@
 				</div>
 				<div class="row list">
 					
-					<?php for ($i=0; $i < 5; $i++) { ?>
-						<div class="col-md-4 body">5J5GF5767</div>
-						<div class="col-md-4 body">10000Ar</div>
-						<div class="col-md-4 body">No</div>
+					<?php foreach($allCode as $row) { ?>
+						<div class="col-md-4 body"><?php echo $row->code; ?></div>
+						<div class="col-md-4 body"><?php echo $row->tarif; ?></div>
+						<div class="col-md-4 body"><?php echo $row->utilisable; ?></div>
 					<?php } ?>
 				</div>
 			</div>
