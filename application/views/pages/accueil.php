@@ -347,11 +347,12 @@
 
 	<script>
 
-  $("a.about-icon").hover(function () {
-    $(this).children("i").addClass("fa-spin");
- }, function(){
- 	$(this).children("i").removeClass("fa-spin");
- });
+		$("a.about-icon").hover(function () {
+			$(this).children("i").addClass("fa-spin");
+		}, function(){
+			$(this).children("i").removeClass("fa-spin");
+		});
+ 	</script>
 
 </body>
 
