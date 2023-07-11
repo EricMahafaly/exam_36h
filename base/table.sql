@@ -35,46 +35,46 @@ CREATE TABLE user_code(
 );
 
 CREATE TABLE sport(
-    id SERIAL PRIMARY KEY ,
-    nom VARCHAR (50) ,
-    description VARCHAR(255) ,
-    frequence INTEGER ,
-    repos DOUBLE PRECISION
-);
-
-CREATE TABLE nutrition(
-    id SERIAL PRIMARY KEY ,
-    nom VARCHAR(50) ,
-    categorie VARCHAR(50) 
-);
-
-CREATE TABLE gagner_poids(
-    id SERIAL PRIMARY KEY ,
-    couple INTEGER ,
-    eau_par_jour DOUBLE PRECISION ,
-    poids_min INTEGER ,
-    poids_max INTEGER ,
-    genre INTEGER ,
-    duree_sport DOUBLE PRECISION ,
-    poids_nutrition DOUBLE PRECISION ,
-    sport_id INTEGER REFERENCES sport ,
-    nutrition_id INTEGER REFERENCES nutrition 
-);
-
-CREATE TABLE perdre_poids(
-    id SERIAL PRIMARY KEY ,
-    couple INTEGER ,
-    eau_par_jour DOUBLE PRECISION ,
-    poids_min INTEGER ,
-    poids_max INTEGER ,
-    genre INTEGER ,
-    duree_sport DOUBLE PRECISION ,
-    poids_nutrition DOUBLE PRECISION ,
-    sport_id INTEGER REFERENCES sport ,
-    nutrition_id INTEGER REFERENCES nutrition 
-);
-
-CREATE TABLE IMC(
     id SERIAL PRIMARY KEY,
-    resultat DOUBLE PRECISION
+    nom VARCHAR (50)
 );
+
+CREATE TABLE aliments (
+    id_aliments SERIAL PRIMARY KEY ,
+    nom VARCHAR(50) ,
+    categorie VARCHAR(50),
+    objectif VARCHAR(50) 
+);
+
+CREATE TABLE regime_perdre (
+    id_regime_perdre SERIAL PRIMARY KEY,
+    kilo_perdre_min INTEGER,
+    kilo_perdre_max INTEGER,
+    id_aliments INTEGER,
+    frequence_semaine INTEGER,
+    duree_semaine INTEGER,
+    FOREIGN KEY (id_aliments) REFERENCES aliments(id_aliments) 
+);
+
+CREATE TABLE regime_gains (
+    id_regime_gains SERIAL PRIMARY KEY,
+    kilo_gains_min INTEGER,
+    kilo_gains_max INTEGER,
+    id_aliments INTEGER,
+    frequence_semaine INTEGER,
+    duree_semaine INTEGER,
+    FOREIGN KEY (id_aliments) REFERENCES aliments(id_aliments)
+);
+
+
+-- view --
+CREATE OR REPLACE VIEW v_regime_perdre AS
+    SELECT regime_perdre.id_regime_perdre, regime_perdre.kilo_perdre_min, regime_perdre.kilo_perdre_max, aliments.nom, regime_perdre.frequence_semaine, regime_perdre.duree_semaine
+    FROM regime_perdre JOIN aliments ON regime_perdre.id_aliments = aliments.id_aliments
+;
+
+CREATE OR REPLACE VIEW v_regime_gains AS
+    SELECT regime_gains.id_regime_gains, regime_gains.kilo_gains_min, regime_gains.kilo_gains_max, aliments.nom, regime_gains.frequence_semaine, regime_gains.duree_semaine
+    FROM regime_gains JOIN aliments ON regime_gains.id_aliments = aliments.id_aliments
+;
+

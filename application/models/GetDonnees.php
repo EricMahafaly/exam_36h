@@ -30,4 +30,20 @@ class GetDonnees extends CI_Model {
 
         return $query->result();
     }
+
+    // get regime pour maigrir
+    public function getRegime($poidPerdre) {
+        $sql = "SELECT * FROM v_regime_perdre WHERE kilo_perdre_min <= %d and %d <= kilo_perdre_max";
+        $query = $this->db->query(sprintf($sql, $poidPerdre, $poidPerdre));
+
+        return $query->result();
+    }
+
+    // get regime pour grossir
+    public function getRegimeGainsPoids($poidGains) {
+        $sql = "SELECT * FROM v_regime_gains WHERE kilo_gains_min <= %d and %d <= kilo_gains_max";
+        $query = $this->db->query(sprintf($sql, $poidGains, $poidGains));
+
+        return $query->result();
+    }
 } 
