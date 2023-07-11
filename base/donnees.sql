@@ -1,6 +1,7 @@
 -----USERS
-INSERT INTO users VALUES 
-    (0, 'MAHAFALY', 'Eric', 'Eric@gmail.com', 'eriv', '2010-11-29', 1, 1.75, 70, 1)
+INSERT INTO users VALUES
+    (default, 'MAHAFALY', 'Eric', 'jean@gmail.com', 'jean', '2010-11-29', 1, 1.75, 70, 0),
+    (default, 'MAHAFALY', 'Eric', 'Eric@gmail.com', 'eriv', '2010-11-29', 1, 1.75, 70, 1)
 ;
 
 -----CODES
