@@ -31,4 +31,16 @@ class Accueil extends CI_Controller {
 
         redirect('/Form/loginView');
     }
+
+    // choix objectif
+    public function choixOjectif() {
+        $this->load->view('/pages/choix_objectif');
+    }
+
+    // perdre poids
+    public function perdrePoids() {
+        $poidsPerdre = $this->input->post('poids');
+
+        
+    }
 }

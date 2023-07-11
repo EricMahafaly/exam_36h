@@ -36,19 +36,39 @@ CREATE TABLE user_code(
 
 CREATE TABLE sport(
     id SERIAL PRIMARY KEY,
-    nom VARCHAR (50),
+    nom VARCHAR (50)
 );
 
-CREATE TABLE nutrition(
-    id SERIAL PRIMARY KEY ,
+CREATE TABLE aliments (
+    id_aliments SERIAL PRIMARY KEY ,
     nom VARCHAR(50) ,
-    categorie VARCHAR(50) 
+    categorie VARCHAR(50),
+    objectif VARCHAR(50) 
 );
 
-CREATE TABLE regime (
-    id_regime SERIAL PRIMARY KEY,
+CREATE TABLE regime_perdre (
+    id_regime_perdre SERIAL PRIMARY KEY,
+    kilo_perdre_min INTEGER,
+    kilo_perdre_max INTEGER,
+    id_aliments INTEGER,
+    frequence_semaine INTEGER,
+    duree_semaine INTEGER,
+    FOREIGN KEY (id_aliments) REFERENCES aliments(id_aliments) 
+);
 
-)
+CREATE TABLE regime_gains (
+    id_regime_gains SERIAL PRIMARY KEY,
+    kilo_gains_min INTEGER,
+    kilo_gains_max INTEGER,
+    id_aliments INTEGER,
+    frequence_semaine INTEGER,
+    duree_semaine INTEGER 
+);
 
+
+-- view --
+CREATE OR REPLACE VIEW v_regime_perdre AS
+    SELECT regime_perdre.id_regime_perdre, regime_perdre.kilo_perdre_min, regime_perdre.kilo_perdre_max, aliments.nom 
+    FROM regime_perdre JOIN aliments ON regime_perdre.id_aliments = aliments.id_aliments
 
 

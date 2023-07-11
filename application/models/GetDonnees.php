@@ -30,4 +30,12 @@ class GetDonnees extends CI_Model {
 
         return $query->result();
     }
+
+    // get regime pour maigrir
+    public function getRegine($poidPerdre) {
+        $sql = "SELECT * FROM regime_perdre WHERE kilo_perdre_min < %d and %d < kilo_perdre_max;"
+        $query = $this->db->query(sprintf($sql, $poidPerdre, $poidPerdre));
+
+        
+    }
 } 
