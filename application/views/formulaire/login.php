@@ -95,8 +95,6 @@
 	<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.slabtext.js'); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url('assets/js/plugins.js'); ?>"></script>
 
-	<script>
-
 
 </body>
 </html>
